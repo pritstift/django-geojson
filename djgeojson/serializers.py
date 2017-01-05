@@ -160,9 +160,10 @@ class Serializer(PythonSerializer):
 
         # Optional float precision control
         precision = self.options.pop('precision', None)
-        floatrepr = json.encoder.FLOAT_REPR
+        floatrepr = lambda o: format(o, '.2f')
         if precision is not None:
             # Monkey patch for float precision!
+            
             json.encoder.FLOAT_REPR = lambda o: format(o, '.%sf' % precision)
 
         json.dump(self.feature_collection, self.stream, cls=DjangoGeoJSONEncoder, **self.options)
