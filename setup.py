@@ -11,8 +11,7 @@ setup(
     url='https://github.com/makinacorpus/django-geojson',
     download_url="http://pypi.python.org/pypi/django-geojson/",
     description="Serve vectorial map layers with Django",
-    long_description=open(os.path.join(here, 'README.rst')).read() + '\n\n' +
-                     open(os.path.join(here, 'CHANGES')).read(),
+    long_description=open(os.path.join(here, 'README.rst')).read(),
     license='LPGL, see LICENSE file.',
     install_requires=[
         'Django',
